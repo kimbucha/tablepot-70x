@@ -1,4 +1,4 @@
-export type Question = {
+type Question = {
     id: number;
     category: string;
     question: string;
@@ -84,3 +84,4 @@ export type Question = {
   ];
   
   export default questions;
+  

@@ -103,7 +103,7 @@ export default function Home() {
   return (
     <ThemeProvider theme={theme}>
       <div className="min-h-screen flex flex-col items-center justify-center bg-white text-sky-500 p-4">
-        <div className="relative w-full max-w-md">
+        <div className="relative w-full max-w-md mx-auto">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={currentQuestionIndex}
