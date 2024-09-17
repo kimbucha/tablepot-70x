@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import questions from '../data/questions';
-import type { Question } from '../data/questions';
+import questions, { Question } from '../data/questions';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { styled } from '@mui/system';
@@ -39,6 +38,9 @@ const SimpleButton = styled(Button)({
   fontWeight: 'bold',
   textTransform: 'none',
   padding: '10px 20px',
+  position: 'fixed',
+  bottom: '16px',
+  right: '16px',
   '&:hover': {
     background: '#47B3E0',
   },
@@ -144,7 +146,6 @@ export default function Home() {
           variant="contained"
           color="primary"
           onClick={resetDeck}
-          className="fixed bottom-4 right-4"
         >
           Reset
         </SimpleButton>
