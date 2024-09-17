@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.magic-button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background-color: #59C5ED;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  transform: perspective(1px) translateZ(0);
+}
+
+.magic-button:hover {
+  background-color: #47B3E0;
+  transform: rotate(5deg);
+}
+
+.magic-button:active {
+  transform: scale(0.95);
+}
+
+.magic-button::before,
+.magic-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.magic-button::before {
+  transform: translateX(-100%) skewX(-15deg);
+}
+
+.magic-button::after {
+  transform: translateX(100%) skewX(15deg);
+}
+
+.magic-button:hover::before,
+.magic-button:hover::after {
+  transform: translateX(0) skewX(0);
+  opacity: 1;
+}
